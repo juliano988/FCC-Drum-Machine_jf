@@ -1,0 +1,291 @@
+
+$enable-responsive-font-sizes: true;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+#drum-machine{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95vw;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border-style: solid;
+    background-color: hsla(0, 0%, 100%, 0.6);
+}
+
+#title{
+    margin: 0px;
+}
+
+#ass{
+    margin: 3px;
+}
+
+#main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 95vw;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: hsla(0, 0%, 100%, 0.6);
+    border-style: solid;
+    border-radius: 10px;
+}
+
+#display{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#label-note, #note{
+    font-style: italic;
+    width: 2.5rem;
+}
+
+#keyboard{
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+#keyboard section:nth-child(odd){
+    background-color: hsl(0, 0%, 85%);
+}
+
+#keyboard section:nth-child(even){
+    background-color: white;
+}
+
+section{
+    display: flex;
+    margin-left: -0.5px;
+    margin-right: -0.5px;
+}
+
+section h3{
+    text-align: center;
+    width: 1.5rem;
+    height: 180px;
+    margin: 0px;
+    padding-top: 140px;
+    background-color: gray;
+    border-style: solid;
+    transition-property: width border-style color;
+    transition-duration: 1s;
+    cursor: not-allowed;
+}
+
+section div{
+    width: 25px;
+    height: 180px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    border-style: solid;
+    font-size: 0.9rem;
+    text-align: center;
+    padding-top: 150px;
+    transition-property: padding-top;
+    transition-timing-function: ease-out;
+    transition-duration: 500ms;
+}
+
+section div:hover{
+    background-color: blue;
+    padding-top: 130px;
+}
+
+.b{
+    position: relative;
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+    padding-top: initial;
+    width: 15px;
+    height: 110px;
+    background-color: black;
+    border-style: inherit;
+}
+
+.b:hover{
+    background-color: red;
+    padding-top: initial;
+}
+
+#tip{
+    margin-top: 3px;
+    margin-bottom: 3px;
+    max-height: 9rem;
+}
+
+#tip-btn{
+    @extend .btn;
+    @extend .btn-primary;
+    width: 100%;
+}
+
+#collapse-content{
+    display: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-align: justify;
+    background-color: white;
+}
+
+#collapse-content p{
+    text-align: center;
+    width: 100%;
+    margin: 0px;
+    line-height: 2rem;
+}
+
+#menu{
+    @extend .input-group-sm;
+    @extend .mb-3;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    border-radius: 5px;
+    padding-left: 1px;
+    padding-right: 1px;
+    background-color: white;
+}
+
+#menu-input-group1 , #menu-input-group2{
+    @extend .input-group-prepend;
+}
+
+#menu-input-group2{
+    width: 100%;
+}
+
+#volume-icon{
+    @extend .input-group-text;
+}
+
+#octave-label , #span-octave{
+    @extend .input-group-text;
+}
+
+#L-btn , #R-btn{
+    @extend .btn;
+    @extend .btn-outline-secondary;
+}
+
+#Octave-select{
+    @extend .custom-select;
+    width: 5rem;
+}
+
+#switch-div{
+    display: flex;
+    align-items: center;
+}
+
+#switch-div div{
+    @extend .custom-control;
+    @extend .custom-switch;
+}
+
+#switch-btn{
+    @extend .custom-control-input;
+    cursor: pointer;
+}
+
+#switch-label{
+    @extend .custom-control-label;
+    cursor: pointer;
+}
+
+#volume-range-div{
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 100%;
+    background-color: white;
+}
+
+#volume-range{
+    @extend .custom-range;
+}
+
+@include media-breakpoint-only(xs) { 
+    #drum-machine{
+        background-image: url('./bgs/bgSP.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #menu{
+        flex-direction: column;
+    }
+    #Octave-select{
+        width: 100%;
+    }
+    #tip{
+        display: none;
+    }
+ }
+@include media-breakpoint-only(sm) { 
+    #drum-machine{
+        background-image: url('./bgs/bgPC.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #tip{
+        display: none;
+    }
+ }
+@include media-breakpoint-only(md) { 
+    #drum-machine{
+        background-image: url('./bgs/bgPC.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #collapse-content{
+        margin-top: 3px;
+    }
+ }
+@include media-breakpoint-only(lg) { 
+    #drum-machine{
+        background-image: url('./bgs/bgPC.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #collapse-content{
+        margin-top: 3px;
+    }
+ }
+@include media-breakpoint-only(xl) { 
+    #drum-machine{
+        background-image: url('./bgs/bgPC.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #tip-btn{
+        display: none;
+    }
+    #collapse-content{
+        display: block;
+    }
+ }
+//To center the keyboard when the screen width is too large.
+ @media(min-width: 1700px){
+    #keyboard{
+        margin-left: auto;
+        margin-right: auto;
+    }
+ }
